@@ -28,7 +28,8 @@ export class HttpService {
 
   private api = '/api/';
 
-  constructor( private http: HttpClient ) { }
+  constructor( private http: HttpClient,
+    ) { }
 
 // ----------------- CRUD -------------------
 
