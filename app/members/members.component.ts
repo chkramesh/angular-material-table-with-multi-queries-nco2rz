@@ -122,8 +122,7 @@ private dsData: any;
 
   //  This works fine when multiple queries used.
   public getAllRecords(): any {
-      this.httpService.getAllRecords(this.membersUrl)
-      .subscribe(data => {
+      this.httpService.getAllRecords(this.membersUrl).subscribe(data => {
         this.dataLength = data.length;
         this.dataSource.data = data;
       });
