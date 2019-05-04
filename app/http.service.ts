@@ -28,14 +28,13 @@ export class HttpService {
 
   private api = '/api/';
 
-  constructor(
-    private http: HttpClient,
-    ) { }
+  constructor( private http: HttpClient ) { }
 
 // ----------------- CRUD -------------------
 
   // --------------GET ALL RECORDS ------------
   public getAllRecords(url): Observable<any> {
+    console.log('getAllRecords url = ' + url);
     return this.http.get<MemberModel>(url).pipe(
       catchError((error: any) => {
            console.error(error);
