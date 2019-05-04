@@ -1,5 +1,4 @@
 
-
 // THIS ONLY DELETES WHAT IS IN MEMORY.
 // REFRESHING THE BROWSER CLEARS THE MEMORY
 //   AND THE ORIGINAL FILE DB IS RELOADED.
@@ -7,7 +6,6 @@
 // FORK IT AND ADD FIREBASE IF YOU LIKE.
 
 // Showing different ways to pass a URL to the service.
-
 
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
@@ -21,8 +19,6 @@ const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
 
-
-
 @Injectable({ providedIn: 'root' })
 export class HttpService {
 
@@ -31,7 +27,7 @@ export class HttpService {
   constructor( private http: HttpClient,
     ) { }
 
-// ----------------- CRUD -------------------
+  // ----------------- CRUD -------------------
 
   // --------------GET ALL RECORDS ------------
   public getAllRecords(url): Observable<any> {
@@ -44,9 +40,7 @@ export class HttpService {
     );
   }
 
-
   // ----------- CREATE new record -----------
-
   public addRecord(url: string, recordData):  Observable<any> {
     return this.http.post(url, recordData).pipe(
       catchError((error: any) => {
@@ -56,11 +50,8 @@ export class HttpService {
     );
   }
 
-
   // ---------- EDIT AND UPDATE --------------
-
   // ---- FETCH record detail for editing or viewing. ----
-
   public getRecordById(url, recordId): Observable<any> {
     return this.http.get<any>(`${url}/${recordId}`).pipe(
       catchError((error: any) => {
@@ -70,9 +61,7 @@ export class HttpService {
     );
   }
 
-
   // ---- UPDATES an existing record ----
-
   public updateRecord(url, recordUpdate): Observable<any> {
     return this.http.put(url, recordUpdate, httpOptions).pipe(
       catchError((error: any) => {
@@ -82,10 +71,7 @@ export class HttpService {
     );
   }
 
-
-
   // --------- DELETES a single record. ---------
-
   public deleteRecord(url):  Observable<any> {
     return this.http.delete(url).pipe(
       catchError((error: any) => {
@@ -95,9 +81,7 @@ export class HttpService {
     );
   }
 
-
-// --------------- QUERIES ---------------------
-
+  // --------------- QUERIES ---------------------
   public searchCountries(url) {
     return this.http.get<any>(url).pipe(
       map(data => {
@@ -113,7 +97,6 @@ export class HttpService {
   // --------- INCREMENTAL SEARCH --------
 
   //  Called by the Mat Datatable search by last name.
-
   public nameSearch(terms) {
     return terms.pipe(
         debounceTime(300),
@@ -130,8 +113,6 @@ export class HttpService {
   }
 
   // --------------- FORM CONTROLS ---------------------
-
-
   public validateUsername(userName) {
  
     const url = `api/members/?user_name=${userName}`;
