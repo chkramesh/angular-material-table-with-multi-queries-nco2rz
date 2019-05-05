@@ -1,27 +1,19 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { FlexLayoutModule } from '@angular/flex-layout';
-import { MaterialModule } from './material.module';
-import { HttpModule, Http } from '@angular/http';
-import { NgxWebstorageModule } from 'ngx-webstorage';
+import {BrowserModule} from '@angular/platform-browser';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
-import { Routes, RouterModule } from '@angular/router';
-
-import { AppComponent } from './app.component';
-// import { HelloComponent } from './hello.component';
-// import { HomeComponent } from './home/home.component';
-// import { SearchComponent } from './search/search.component';
-// import { OthersComponent } from './others/others.component';
-// import { AddressComponent } from './address/address.component';
+// Jim's section:
 import { MembersComponent } from './members/members.component';
 import { HomeComponent } from './home/home.component';
+
 
 import { HttpService } from './http.service';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from '../server/in-memory-data.service';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { ConfirmService } from './services/confirm-dialog/confirm.service';
 import { ConfirmComponent } from './services/confirm-dialog/confirm.component';
@@ -40,6 +32,13 @@ import { ErrorMatcherService } from './services/form-validation/form-validators.
 import { ShowOnDirtyErrorStateMatcher } from '@angular/material';
 import { UniqueNameService } from './services/unique-name.service';
 
+import { Routes, RouterModule } from '@angular/router';
+
+import {AppComponent} from './app.component';
+
+// import { MembersComponent } from './members/members.component';
+// import { HomeComponent } from './home/home.component';
+
 import 'hammerjs';
 
 // import { MatTabsModule } from '@angular/material';
@@ -53,36 +52,141 @@ const routes: Routes = [
   // { path: 'address', component: AddressComponent }
 ];
 
+// Stackbliz
+import {A11yModule} from '@angular/cdk/a11y';
+import {BidiModule} from '@angular/cdk/bidi';
+import {ObserversModule} from '@angular/cdk/observers';
+import {OverlayModule} from '@angular/cdk/overlay';
+import {PlatformModule} from '@angular/cdk/platform';
+import {PortalModule} from '@angular/cdk/portal';
+import {ScrollDispatchModule} from '@angular/cdk/scrolling';
+import {CdkStepperModule} from '@angular/cdk/stepper';
+import {CdkTableModule} from '@angular/cdk/table';
+import {CdkTreeModule} from '@angular/cdk/tree';
+import {
+  MatAutocompleteModule,
+  MatBadgeModule,
+  MatBottomSheetModule,
+  MatButtonModule,
+  MatButtonToggleModule,
+  MatCardModule,
+  MatCheckboxModule,
+  MatChipsModule,
+  MatDatepickerModule,
+  MatDialogModule,
+  MatDividerModule,
+  MatExpansionModule,
+  MatFormFieldModule,
+  MatGridListModule,
+  MatIconModule,
+  MatInputModule,
+  MatListModule,
+  MatMenuModule,
+  MatNativeDateModule,
+  MatPaginatorModule,
+  MatProgressBarModule,
+  MatProgressSpinnerModule,
+  MatRadioModule,
+  MatRippleModule,
+  MatSelectModule,
+  MatSidenavModule,
+  MatSliderModule,
+  MatSlideToggleModule,
+  MatSnackBarModule,
+  MatSortModule,
+  MatStepperModule,
+  MatTableModule,
+  MatTabsModule,
+  MatToolbarModule,
+  MatTooltipModule,
+  MatTreeModule,
+} from '@angular/material';
+
+/**
+ * NgModule that includes all Material modules that are required to serve the app.
+ */
+@NgModule({
+  exports: [
+    // CDK
+    A11yModule,
+    BidiModule,
+    ObserversModule,
+    OverlayModule,
+    PlatformModule,
+    PortalModule,
+    ScrollDispatchModule,
+    CdkStepperModule,
+    CdkTableModule,
+    CdkTreeModule,
+    
+    // Material
+    MatAutocompleteModule,
+    MatBadgeModule,
+    MatBottomSheetModule,
+    MatButtonModule,
+    MatButtonToggleModule,
+    MatCardModule,
+    MatCheckboxModule,
+    MatChipsModule,
+    MatDatepickerModule,
+    MatDialogModule,
+    MatDividerModule,
+    MatExpansionModule,
+    MatFormFieldModule,
+    MatGridListModule,
+    MatIconModule,
+    MatInputModule,
+    MatListModule,
+    MatMenuModule,
+    MatNativeDateModule,
+    MatPaginatorModule,
+    MatProgressBarModule,
+    MatProgressSpinnerModule,
+    MatRadioModule,
+    MatRippleModule,
+    MatSelectModule,
+    MatSidenavModule,
+    MatSliderModule,
+    MatSlideToggleModule,
+    MatSnackBarModule,
+    MatSortModule,
+    MatStepperModule,
+    MatTableModule,
+    MatTabsModule,
+    MatToolbarModule,
+    MatTooltipModule,
+    MatTreeModule,
+  ]
+})
+export class MaterialModule {}
+
 @NgModule({
   imports: [
+    // Jim's
     FlexLayoutModule,
+    
+    // Stackbliz
     BrowserModule,
-    BrowserAnimationsModule,
-    NoopAnimationsModule,
+    CommonModule,
+    MaterialModule,
     FormsModule,
-    // MatTabsModule,
-    HttpModule, 
-    FormsModule, ReactiveFormsModule,
-    NgxWebstorageModule.forRoot(),
-    MaterialModule, FlexLayoutModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService
     ),
     RouterModule.forRoot(routes)
   ],
   declarations: [
-    AppComponent, 
-    // HelloComponent, 
-    HomeComponent, 
+    AppComponent,
     MembersComponent,
+    HomeComponent,
     ConfirmComponent,
     MessagesComponent,
     EditMemberComponent,
     AddMemberComponent,
     AddEditFormComponent
-    // SearchComponent, 
-    // OthersComponent,
-    // AddressComponent
   ],
   providers: [
     MembersComponent,
@@ -105,4 +209,11 @@ const routes: Routes = [
     AddMemberComponent,
   ],
 })
-export class AppModule { }
+export class AppModule {}
+
+/**
+ * Copyright Google LLC All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
