@@ -36,6 +36,8 @@ import { Routes, RouterModule } from '@angular/router';
 
 import {AppComponent} from './app.component';
 
+import { MaterialModule } from './material.module';
+
 // import { MembersComponent } from './members/members.component';
 // import { HomeComponent } from './home/home.component';
 
@@ -63,102 +65,103 @@ import {ScrollDispatchModule} from '@angular/cdk/scrolling';
 import {CdkStepperModule} from '@angular/cdk/stepper';
 import {CdkTableModule} from '@angular/cdk/table';
 import {CdkTreeModule} from '@angular/cdk/tree';
-import {
-  MatAutocompleteModule,
-  MatBadgeModule,
-  MatBottomSheetModule,
-  MatButtonModule,
-  MatButtonToggleModule,
-  MatCardModule,
-  MatCheckboxModule,
-  MatChipsModule,
-  MatDatepickerModule,
-  MatDialogModule,
-  MatDividerModule,
-  MatExpansionModule,
-  MatFormFieldModule,
-  MatGridListModule,
-  MatIconModule,
-  MatInputModule,
-  MatListModule,
-  MatMenuModule,
-  MatNativeDateModule,
-  MatPaginatorModule,
-  MatProgressBarModule,
-  MatProgressSpinnerModule,
-  MatRadioModule,
-  MatRippleModule,
-  MatSelectModule,
-  MatSidenavModule,
-  MatSliderModule,
-  MatSlideToggleModule,
-  MatSnackBarModule,
-  MatSortModule,
-  MatStepperModule,
-  MatTableModule,
-  MatTabsModule,
-  MatToolbarModule,
-  MatTooltipModule,
-  MatTreeModule,
-} from '@angular/material';
+
+// import {
+//   MatAutocompleteModule,
+//   MatBadgeModule,
+//   MatBottomSheetModule,
+//   MatButtonModule,
+//   MatButtonToggleModule,
+//   MatCardModule,
+//   MatCheckboxModule,
+//   MatChipsModule,
+//   MatDatepickerModule,
+//   MatDialogModule,
+//   MatDividerModule,
+//   MatExpansionModule,
+//   MatFormFieldModule,
+//   MatGridListModule,
+//   MatIconModule,
+//   MatInputModule,
+//   MatListModule,
+//   MatMenuModule,
+//   MatNativeDateModule,
+//   MatPaginatorModule,
+//   MatProgressBarModule,
+//   MatProgressSpinnerModule,
+//   MatRadioModule,
+//   MatRippleModule,
+//   MatSelectModule,
+//   MatSidenavModule,
+//   MatSliderModule,
+//   MatSlideToggleModule,
+//   MatSnackBarModule,
+//   MatSortModule,
+//   MatStepperModule,
+//   MatTableModule,
+//   MatTabsModule,
+//   MatToolbarModule,
+//   MatTooltipModule,
+//   MatTreeModule,
+// } from '@angular/material';
 
 /**
  * NgModule that includes all Material modules that are required to serve the app.
  */
-@NgModule({
-  exports: [
-    // CDK
-    A11yModule,
-    BidiModule,
-    ObserversModule,
-    OverlayModule,
-    PlatformModule,
-    PortalModule,
-    ScrollDispatchModule,
-    CdkStepperModule,
-    CdkTableModule,
-    CdkTreeModule,
+// @NgModule({
+//   exports: [
+//     // CDK
+//     A11yModule,
+//     BidiModule,
+//     ObserversModule,
+//     OverlayModule,
+//     PlatformModule,
+//     PortalModule,
+//     ScrollDispatchModule,
+//     CdkStepperModule,
+//     CdkTableModule,
+//     CdkTreeModule,
     
-    // Material
-    MatAutocompleteModule,
-    MatBadgeModule,
-    MatBottomSheetModule,
-    MatButtonModule,
-    MatButtonToggleModule,
-    MatCardModule,
-    MatCheckboxModule,
-    MatChipsModule,
-    MatDatepickerModule,
-    MatDialogModule,
-    MatDividerModule,
-    MatExpansionModule,
-    MatFormFieldModule,
-    MatGridListModule,
-    MatIconModule,
-    MatInputModule,
-    MatListModule,
-    MatMenuModule,
-    MatNativeDateModule,
-    MatPaginatorModule,
-    MatProgressBarModule,
-    MatProgressSpinnerModule,
-    MatRadioModule,
-    MatRippleModule,
-    MatSelectModule,
-    MatSidenavModule,
-    MatSliderModule,
-    MatSlideToggleModule,
-    MatSnackBarModule,
-    MatSortModule,
-    MatStepperModule,
-    MatTableModule,
-    MatTabsModule,
-    MatToolbarModule,
-    MatTooltipModule,
-    MatTreeModule,
-  ]
-})
-export class MaterialModule {}
+//     // Material
+//     MatAutocompleteModule,
+//     MatBadgeModule,
+//     MatBottomSheetModule,
+//     MatButtonModule,
+//     MatButtonToggleModule,
+//     MatCardModule,
+//     MatCheckboxModule,
+//     MatChipsModule,
+//     MatDatepickerModule,
+//     MatDialogModule,
+//     MatDividerModule,
+//     MatExpansionModule,
+//     MatFormFieldModule,
+//     MatGridListModule,
+//     MatIconModule,
+//     MatInputModule,
+//     MatListModule,
+//     MatMenuModule,
+//     MatNativeDateModule,
+//     MatPaginatorModule,
+//     MatProgressBarModule,
+//     MatProgressSpinnerModule,
+//     MatRadioModule,
+//     MatRippleModule,
+//     MatSelectModule,
+//     MatSidenavModule,
+//     MatSliderModule,
+//     MatSlideToggleModule,
+//     MatSnackBarModule,
+//     MatSortModule,
+//     MatStepperModule,
+//     MatTableModule,
+//     MatTabsModule,
+//     MatToolbarModule,
+//     MatTooltipModule,
+//     MatTreeModule,
+//   ]
+// })
+// export class MaterialModule {}
 
 @NgModule({
   imports: [
