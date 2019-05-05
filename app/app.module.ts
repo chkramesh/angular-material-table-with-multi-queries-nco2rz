@@ -5,7 +5,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MaterialModule } from './material.module';
 import { HttpModule, Http } from '@angular/http';
-// import { NgxWebstorageModule } from 'ngx-webstorage';
+import { NgxWebstorageModule } from 'ngx-webstorage';
 
 import { Routes, RouterModule } from '@angular/router';
 
@@ -46,7 +46,7 @@ const routes: Routes = [
     // MatTabsModule,
     HttpModule, 
     FormsModule, ReactiveFormsModule,
-    // NgxWebstorageModule.forRoot(),
+    NgxWebstorageModule.forRoot(),
     MaterialModule, FlexLayoutModule,
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService
