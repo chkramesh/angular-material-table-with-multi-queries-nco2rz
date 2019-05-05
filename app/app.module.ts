@@ -40,7 +40,6 @@ import { MaterialModule } from './material.module';
 
 // import { MembersComponent } from './members/members.component';
 // import { HomeComponent } from './home/home.component';
-
 import 'hammerjs';
 
 // import { MatTabsModule } from '@angular/material';
