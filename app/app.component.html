@@ -1,9 +1,26 @@
 <mat-card color="primary">
   Angular Material Data Table Paginator With Multi Queries
 </mat-card>
-<div>
+<!-- <div>
   <app-members></app-members>
-</div>
+</div> -->
+
+<nav mat-tab-nav-bar>
+  
+	<a mat-tab-link routerLink="/home" routerLinkActive #homeTab="routerLinkActive" [active]="homeTab.isActive">
+		Home
+	</a>
+  
+	<a mat-tab-link routerLink="/members" routerLinkActive #membersTab="routerLinkActive" [active]="membersTab.isActive">Search</a>
+
+	<!-- <a mat-tab-link routerLink="/others" routerLinkActive #otherTab="routerLinkActive" [active]="otherTab.isActive">Others</a>
+
+  <a mat-tab-link routerLink="/address" routerLinkActive #addressTab="routerLinkActive" [active]="addressTab.isActive">Address</a> -->
+
+</nav>
+
+<router-outlet></router-outlet>
+
 
 <!--
 Copyright Google LLC All Rights Reserved.
