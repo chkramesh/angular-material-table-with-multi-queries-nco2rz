@@ -6,6 +6,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 // Jim's section:
 import { MembersComponent } from './members/members.component';
+import { EmployeesComponent } from './employees/employees.component';
 import { HomeComponent } from './home/home.component';
 
 
@@ -48,6 +49,7 @@ const routes: Routes = [
   // { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'members', component: MembersComponent },
+  { path: 'employees', component: EmployeesComponent },
   // { path: 'search', component: SearchComponent },
   // { path: 'others', component: OthersComponent },
   // { path: 'address', component: AddressComponent }
@@ -183,6 +185,7 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     MembersComponent,
+    EmployeesComponent,
     HomeComponent,
     ConfirmComponent,
     MessagesComponent,
