@@ -74,6 +74,38 @@ export class InMemoryDataService implements InMemoryDbService {
         country: "United States",
     }
     ];
-    return { members };
+
+    const countryList = [
+      {
+        id: 41,
+        first_name: "Joan",
+        last_name: "Brown",
+        user_name: "jbrown",
+        country: "Canada",
+    },
+    {
+        id: 40,
+        first_name: "Mort",
+        last_name: "Johnston",
+        user_name: "morty",
+        country: "Canada",
+    },
+    
+    ];
+
+    let heroes = [
+      { id: 1, name: 'Windstorm' },
+      { id: 2, name: 'Bombasto' },
+      { id: 3, name: 'Magneta' },
+      { id: 4, name: 'Tornado' }
+    ];
+    
+    let tasks = [
+      {    id: 1,    description: 'Buy Groceries'},
+      {    id: 2,    description: 'Paint the garage' }
+    ];
+    return { members, countryList, heroes };
   }
+
+
 }
