@@ -1,14 +1,8 @@
-
-
-
-
 //  Child components process their own data, not the main-processor service.
 
 import { Component, AfterViewInit, Inject, ViewChild, ViewEncapsulation } from '@angular/core';
-
 import { HttpErrorResponse } from '@angular/common/http';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
-
 
 import { HttpService } from '../../http.service';
 import { MemberModel } from '../member.model';
@@ -18,14 +12,11 @@ import { UpdateDatatableService } from '../../services/update-datatable.service'
 import { MessagesService } from '../../services/messages-service/messages.service';
 import { FormErrorsService } from '../../services/form-validation/form-errors.service';
 
-
-
 @Component({
   selector: 'app-edit-member',
   templateUrl: './edit-member.component.html',
   encapsulation: ViewEncapsulation.None
 })
-
 
 export class EditMemberComponent implements AfterViewInit {
 
@@ -37,12 +28,9 @@ export class EditMemberComponent implements AfterViewInit {
   private paginator;
   private dataSource;
 
-
   // This is a form group from FormBuilder.
   @ViewChild(AddEditFormComponent) 
   private addEditForm: AddEditFormComponent;
-
-
 
   constructor(
     private httpService: HttpService,
@@ -54,11 +42,7 @@ export class EditMemberComponent implements AfterViewInit {
     public formErrorsService: FormErrorsService,
   ) {}
 
-
-
   // ---- GET DATA BY ID ----
-
-
 // Need to load the data after the form is rendered so ngOnInit didn't work.
 // setTimeout is a hack to avoid ExpressionChangedAfterItHasBeenCheckedError
 
@@ -87,10 +71,7 @@ export class EditMemberComponent implements AfterViewInit {
           });
   }
 
-
-
   // Populate the form, called above in fetchRecord().
-
   private fillForm(parsedData) {
     this.addEditForm.addEditMemberForm.setValue({
       id: parsedData.id,
@@ -102,10 +83,7 @@ export class EditMemberComponent implements AfterViewInit {
     this.existingUserName(); // If existing name, don't validate.
   }
 
-
-
 // ---- UPDATE ----  Called from edit-member.component.html
-
   public update(formValue) {
     if (this.addEditForm.addEditMemberForm.valid) {
       this.httpService.updateRecord(this.membersUrl, formValue)
@@ -138,10 +116,7 @@ export class EditMemberComponent implements AfterViewInit {
     }
   }
 
-
   // ---- UTILITIES ----
-
-
   private reset() {
     this.addEditForm.addEditMemberForm.reset();
   }
